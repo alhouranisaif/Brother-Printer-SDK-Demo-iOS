@@ -65,7 +65,8 @@ public class BrotherPrintSdkPlugin: NSObject, FlutterPlugin, FlutterStreamHandle
         if searcher.error.code == .noError {
           result(nil)
         } else {
-          result(FlutterError(code: "search_error", message: searcher.error.code.name, details: nil))
+          let message = String(describing: searcher.error.code)
+          result(FlutterError(code: "search_error", message: message, details: nil))
         }
       }
     }
